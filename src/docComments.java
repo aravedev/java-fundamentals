@@ -2,8 +2,9 @@ public class docComments {
     public static void main(String[] args) {
 
        double result= calculateArea(5,4,"area");
-        double result2= calculateArea(5,4,"perimeter");
         System.out.println(result);
+        double result2= calculateArea(5,-4,"perimeter");
+
         System.out.println(result2);
     }
     /*
@@ -41,6 +42,10 @@ public class docComments {
      *
      * */
     public static double calculateArea(double length, double width, String option){
+        if(length<0 || width<0){
+            System.out.println("Length or Width cant be negative values");
+            System.exit(0);
+        }
         switch (option){
             case "area": return length * width;
             case "perimeter": return 2*(length + width);
